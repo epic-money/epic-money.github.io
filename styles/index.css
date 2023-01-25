@@ -18,13 +18,30 @@ a:visited {
   text-decoration: none;
 }
 
+html,
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(157, 245, 236, 1) 0%,
-    rgba(18, 189, 213, 1) 50%,
-    rgba(157, 245, 236, 1) 100%
-  );
+  height: 100%;
+  min-height: 100%;
+}
+
+.bg-gradient {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.bg-gradient span {
+  position: absolute;
+  bottom: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12vw;
+  font-weight: 900;
+  background-image: url("../assets/raining-money-26.gif");
+  background-repeat: repeat;
+  background-size: 50%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .container {
@@ -67,7 +84,7 @@ body {
   justify-content: center;
   max-width: 100%;
   width: 100%;
-  background-color: #2876d7;
+  background-color: #b29a12;
 }
 
 .header {
@@ -116,8 +133,8 @@ body {
   text-transform: uppercase;
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(3px);
-  font-size: 4rem;
+  backdrop-filter: blur(2px);
+  font-size: 4vw;
   color: white;
   font-weight: bold;
   align-items: flex-end;
@@ -128,15 +145,18 @@ body {
 
 .card {
   display: flex;
-  max-width: 800px;
+  width: 45%;
   height: 400px;
   max-height: 600px;
-  -webkit-box-shadow: 0px 0px 29px -1px rgba(34, 60, 80, 1);
-  -moz-box-shadow: 0px 0px 29px -1px rgba(34, 60, 80, 1);
-  box-shadow: 0px 0px 29px -1px rgba(34, 60, 80, 1);
-  margin-top: 50px;
-  margin-bottom: 50px;
   transition: 0.4s;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+  .card {
+    width: 100%;
+  }
 }
 
 .card:hover {
@@ -177,18 +197,32 @@ body {
 }
 
 .cards {
+  position: relative;
+  justify-content: center;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 30px;
   align-items: center;
-  padding-top: 50px;
+  padding: 120px 20px;
+  background: linear-gradient(
+    180deg,
+    rgb(29, 29, 29) 0%,
+    rgba(74, 74, 74, 1) 100%
+  );
+  margin-top: -10px;
+  z-index: 20;
+}
+
+.cards::before {
+  position: absolute;
+  height: 0;
+  content: "";
+  width: 100%;
+  top: 0;
+  box-shadow: 0 0 40px 35px rgb(29, 29, 29);
 }
 
 .card-body {
-  background: rgba(2, 0, 36, 0.3);
-  background: linear-gradient(
-    180deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(207, 15, 201, 1) 0%,
-    rgba(215, 150, 238, 1) 100%
-  );
+  background: rgba(43, 43, 46, 1);
+  color: white;
 }
