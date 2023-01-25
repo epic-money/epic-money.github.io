@@ -76,10 +76,17 @@ body {
   display: flex;
 }
 
+@media screen and (max-width: 575px) {
+  .header {
+    display: block;
+    height: 100%;
+  }
+}
+
 .header-casino {
   background-image: url("../assets/casino-header.jpg");
   width: 50%;
-  height: 100%;
+  height: 500px;
   background-position: center;
   background-size: cover;
   border-right: black 5px solid;
@@ -88,10 +95,19 @@ body {
 .header-bookmaker {
   background-image: url("../assets/ставки.jpg");
   width: 50%;
-  height: 100%;
+  height: 500px;
   background-position: center;
   background-size: cover;
   border-left: black 5px solid;
+}
+
+@media screen and (max-width: 575px) {
+  .header-bookmaker,
+  .header-casino {
+    width: 100%;
+    height: 300px;
+    border: none;
+  }
 }
 
 .header-casino div,
